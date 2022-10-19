@@ -1,0 +1,417 @@
+
+/* properties applied for all  */
+*{
+  padding : 0px ; 
+  margin : 0px; 
+  box-sizing: border-box ; 
+  /* overflow: hidden; */
+}
+/* html{
+  overflow: hidden;
+} */
+:root{
+  --btn-border : grey ; 
+  --btn-background : rgba(159, 166, 167, 0.616) ; 
+}
+
+
+/* 
+##############################
+      Header
+##############################*/
+
+.main-container{
+  box-sizing: border-box ; 
+  /* display: grid ; 
+  grid-template-columns : 70px auto ;
+  grid-template-rows : 80px auto  ;  */
+  width:100vw ;
+  height: 100vh;
+}
+
+.head{
+  
+  /* grid-column-start : 1 ; 
+  grid-column-end : 3 ;  */
+  position : absolute ; 
+  background-color: white;
+  top : 0px ; 
+  left : 0px ; 
+  width : 100% ; 
+  height: 10%;
+  padding : 8px 20px ;
+  display: flex; 
+  align-items: center ; 
+  justify-content: space-between ;  
+  border : 1px solid var(--btn-border) ; 
+  /* box-shadow: 0px 4px 4px 0px lightgrey ; */
+   
+
+}
+
+
+.title {
+  display : flex ; 
+  flex-direction: row ; 
+  align-items: center ; 
+}
+
+.title > h1 {
+  color : rgb(75, 69, 69) ; 
+  margin : 0px 10px  ; 
+}
+
+.title > img{
+  width: 50px ; 
+  height: 50px ;
+}
+
+
+
+.tools{
+  display: flex ; 
+  flex-direction: row ; 
+  align-items: center ;
+  justify-content: space-evenly ; 
+  width: 200px ; 
+  
+}
+
+/* .tools i {
+  font-size : 30px ;
+  align-self: center ;  
+} */
+
+
+.tools img {
+  width: 30px ; 
+  height: 30px ;
+
+}
+
+
+.tools > div {
+  border : 1px solid grey  ; 
+  width : 50px ; 
+  height: 50px ; 
+  display : flex; 
+  align-items: center ; 
+  justify-content: center ; 
+  border-radius : 5px ; 
+}
+/* suedo selector for undo */
+#undo::before {
+  content : "Undo" ; 
+  display : inline ; 
+  visibility: hidden;
+  position  : absolute ; 
+  top : 120% ; 
+  left : 50% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  transform: translate(-50%, 0); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+#undo:hover::before{
+  visibility:visible;
+  opacity : 1 ; 
+}
+
+/* suedo selector for redo */
+#redo::before {
+  content : "Redo" ; 
+  display : inline ; 
+  visibility: hidden;
+  position  : absolute ; 
+  top : 120% ; 
+  left : 50% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  transform: translate(-50%, 0); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+#redo:hover::before{
+  visibility: visible;
+  opacity : 1 ; 
+}
+
+
+
+/* suedo selector for clear */
+#clear::before {
+  content : "Clear" ; 
+  /* display : none ;  */
+  visibility: hidden;
+  position  : absolute ; 
+  top : 120% ; 
+  left : 50% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  transform: translate(-50%, 0); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+#clear:hover::before{
+  visibility: visible;
+  opacity : 1 ; 
+}
+
+
+/* ############################
+          Toolbar css
+  ##############################*/
+
+
+.toolbar{
+  /* border : 2px solid red ;  */
+  background-color: white;
+  width : 70px ;
+  height : 90%;  
+
+  position: absolute;
+  top : 10% ; 
+  left : 0px ; 
+  display: flex ; 
+  flex-direction: column ; 
+  align-items: center ;
+  /* box-shadow: 4px 0px 4px 0px lightgrey ; */
+  border-top : 1px solid #D3D3D3;
+  border-bottom : 1px solid #D3D3D3 ;
+  border-right : 1px solid #D3D3D3 ;
+
+}
+
+.tool{
+  border : 1px solid grey  ; 
+  width : 50px ; 
+  height: 50px ; 
+  display : flex; 
+  align-items: center ; 
+  justify-content: center ; 
+  border-radius : 5px ;
+  margin-top : 20px ; 
+  
+}
+
+.arrow > div {
+  width : 80% ;
+  height : 5px ;
+  background-color:black; 
+}
+
+
+
+/* sudoe selector for hover name  */
+.arrow::before {
+  content : "Line" ; 
+  position  : absolute ; 
+  visibility: hidden;
+  top : 50% ; 
+  left : 120% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  transform: translate(0, -50%); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+.arrow:hover::before{
+  
+
+  visibility: visible;
+  opacity : 1 ; 
+}
+
+/* suedo selector for background color  */
+.background-picker::before {
+  content : "Background Color Picker" ; 
+  visibility: hidden;
+  position  : absolute ; 
+  top : 50% ; 
+  left : 120% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  width : 180px ;  
+  transform: translate(0, -50%); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+.background-picker:hover::before{
+  visibility: visible ; 
+  opacity : 1 ; 
+}
+
+
+/* pencil suedo selector  */
+.pencil::before {
+  content : "Pencil" ; 
+  /* display : none ; 
+   */
+   display: inline;
+   visibility: hidden;
+  position  : absolute ; 
+  top : 50% ; 
+  left : 120% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  transform: translate(0, -50%); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+.pencil:hover::before{
+  visibility: visible ; 
+  opacity : 1 ; 
+}
+
+/* eraser suedo selector */
+
+.eraser::before {
+  content : "Eraser" ; 
+  position  : absolute ;
+  visibility: hidden; 
+  top : 50% ; 
+  left : 120% ;
+  font-size : 1em ;
+  opacity: 0;
+  padding : 2px ; 
+  transform: translate(0, -50%); 
+  border : 1px solid black ;
+  transition : 0.5s all ease-in 0.4s ;   
+}
+
+.eraser:hover::before{
+  visibility: visible ; 
+  opacity : 1 ; 
+}
+
+
+
+/* .pencil{
+  display  : block ; 
+} */
+
+/* background tool animation  */
+.background-color{
+  border-radius : 50% ; 
+  width : 30px ; 
+  height: 30px ;
+}
+.tool > img {
+  width : 30px ; 
+  height: 30px ;
+}
+
+/* btn animation */
+.btn{ 
+  background-color : rgba(216, 225, 226, 0.39) ; 
+  border-radius : 5px ;
+  position : relative ; 
+  box-shadow : 0px 4px 1px 0px  grey ; 
+  border : 1px solid  grey ;
+  transition : 0.1s all ease-in ;  
+  cursor: pointer;
+}
+
+
+.btn:active {
+ transform : translateY(4px);
+  box-shadow : 0px -4px 1px 0px  grey ; 
+}
+
+
+.btn:hover{
+  background-color: rgb(255, 255, 255); 
+
+}
+
+/* pencil tool slide  */
+
+.pencil-slide{
+  position : absolute ; 
+  display : none ; 
+  flex-direction: row ;
+  top : 100px  ; 
+  left : 100px ;  
+}
+
+
+.triangle{
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 20px solid var(--btn-background) ;
+  /* opacity : 0.6 ;  */
+  border-bottom: 15px solid transparent;
+  align-self: center ; 
+  
+
+}
+.pencil-opt{
+  background-color : var(--btn-background) ; 
+  display: flex ; 
+  flex-direction: row ;
+  justify-content: space-evenly ; 
+  align-items : center ; 
+  width : 200px ;
+  height: 50px;
+  border : 1px solid var(--btn-border) ;
+  border-radius  : 5px ;  
+}
+
+.eraser-opt{
+  width: 150px ; 
+}
+
+
+
+
+
+
+
+
+/* ############################
+          Canvas css
+  ##############################*/
+
+/* .canvas-cont{
+
+  border : 2px solid blue  ; 
+} */
+.canvas-cont{
+  width : 100% ; 
+  height : 100% ; 
+  
+}
+
+
+canvas {
+  /* position: absolute; */
+  width : 100% ; 
+  height: 100%;
+  /* top: 30px;
+  left: 70px; */
+  
+  
+  
+} 
+
+/* #pencil{
+  cursor: url("https://img.icons8.com/ios-filled/50/000000/pencil--v1.png"), auto;
+}
+
+#eraser{
+  cursor: url("https://img.icons8.com/ios-filled/50/000000/pencil-eraser.png"), auto;
+} */

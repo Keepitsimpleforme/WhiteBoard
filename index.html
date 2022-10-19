@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+// Made by Dheet Developers
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title> White Board </title>
+	<link href="CSS/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="shortcut icon" href="img/devlogo.png" type="image/x-icon">
+  
+</head>
+
+<body>
+	<div class="main-container">
+		<header class="head">
+			<div class="title">
+				<img src="img/devlogo.png" alt="" class="logo">
+        <h1>Dheet Developers</h1>
+      </div>
+
+      <div class="tools">
+        
+        <!-- font from font8 icon -->
+  
+        <div class="undo btn" id="undo"><img src="https://img.icons8.com/wired/64/000000/undo.png"/></div>
+        
+        <div class="redo btn" id="redo"><img src="https://img.icons8.com/wired/64/000000/redo.png"/></div>
+        
+        <div class="clear btn" id="clear"><img src="https://www.tutorialspoint.com/whiteboard/images/clear.png"/></div>
+
+      </div>
+  
+   </header>
+
+  
+    
+    <div class="toolbar" id="toolbar">
+
+
+   
+      <!-- background color picker  -->
+
+      <div class="btn tool background-picker" id = "bg-picker">
+       
+          <input id="color-picker1 background-color" onInput="cancolor = this.value; " type="color" value="#d3d3d3">
+        
+      </div>
+
+
+      <!-- pencil tool -->
+      
+        <div class="btn tool pencil" id='pencil'>
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/pencil--v1.png"/>
+
+          
+
+
+        </div>
+
+       
+        
+
+
+
+      <!-- eraser tool -->
+      <div class="btn tool eraser" id ="eraser">
+        <img src="https://img.icons8.com/ios/50/000000/eraser.png"/>
+
+      </div>
+
+         <!-- Line Tool -->
+      <div class="btn tool arrow" id = "line">
+        <!-- <img src="https://img.icons8.com/ios-filled/50/000000/up-right-arrow.png"/> -->
+        <div class="line-color" id="line-color">
+          
+        </div>
+      </div>
+    </div>
+ 
+
+    <div class="canvas-cont" id="canvas-cont">
+      <canvas id="canvas" >
+
+      </canvas>
+
+    </div>
+
+  </div>
+
+   <!-- code for pencil mini slide  -->
+    <div class="pencil-slide" id="pencil-slide">
+      <div class="triangle"></div>
+        <div class="pencil-opt">
+            <input onInput="pencil_color = this.value" type="color" class="color-picker" value="#000000">
+            <input type="range" min="1" max="100" onInput="pencil_width = this.value" value="3">
+      </div>
+    </div>
+    <!-- code for line mini slide  -->
+    <div class="pencil-slide" id="line-slide">
+      <div class="triangle"></div>
+        <div class="pencil-opt">
+            <input onInput="line_color = this.value" type="color" class="color-picker" id="lineColorPicker" value="#000000">
+            <input type="range" min="1" max="100" onInput="line_width = this.value" value="3">
+      </div>
+    </div>
+
+    <!-- code for eraser mini slide  -->
+    <div class="pencil-slide" id="eraser-slide">
+      <div class="triangle"></div>
+        <div class="pencil-opt eraser-opt">
+            <input type="range" min="1" max="100" onInput="eraser_width = this.value" value="10">
+      </div>
+    </div>
+
+         
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  <script src="JS/script.js"></script>
+</body>
+
+</html>
